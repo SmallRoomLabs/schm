@@ -1,0 +1,7 @@
+# Configuration for Probot's "todo" app
+#   https://github.com/jasonetco/todo
+
+todo:
+  autoAssign: false
+  caseSensitive: true
+  
