@@ -12,9 +12,10 @@ const (
 
 // PartsStruct holds a list of the part-names and -types from the Eagle schematic
 type PartsStruct struct {
-	Name  string // Name of the part (RE1)
-	Typ   string // Type of part (DTDP)
-	Value string // Extra info like speed or pattern for certain types of parts
+	Name   string // Name of the part (RE1)
+	Typ    string // Type of part (DTDP)
+	Value1 string // Extra info like speed or pattern for certain types of parts
+	Value2 string // Extra info like speed or pattern for certain types of parts
 }
 
 // ConnStruct list of parts and pins connected to a net

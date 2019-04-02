@@ -61,7 +61,7 @@ type Drawing struct {
 type Schematic struct {
 	//	Xreflabel   string    `xml:"xreflabel,attr"`
 	//	Xrefpart    string    `xml:"xrefpart,attr"`
-	//	Libraries   Libraries `xml:"libraries"`
+	Libraries Libraries `xml:"libraries"`
 	//	Attributes  string    `xml:"attributes"`
 	//	Variantdefs string    `xml:"variantdefs"`
 	//	Classes     Classes   `xml:"classes"`
@@ -69,21 +69,21 @@ type Schematic struct {
 	Sheets Sheets `xml:"sheets"`
 }
 
-// // Libraries is generated from an XSD element
-// type Libraries struct {
-// 	Library []Library `xml:"library"`
-// }
+// Libraries is generated from an XSD element
+type Libraries struct {
+	Library []Library `xml:"library"`
+}
 
-// // Library is generated from an XSD element
-// type Library struct {
-// 	Name        string     `xml:"name,attr"`
-// 	Urn         string     `xml:"urn,attr"`
-// 	Description string     `xml:"description"`
-// 	Packages    Packages   `xml:"packages"`
-// 	Packages3d  Packages3d `xml:"packages3d"`
-// 	Symbols     Symbols    `xml:"symbols"`
-// 	Devicesets  Devicesets `xml:"devicesets"`
-// }
+// Library is generated from an XSD element
+type Library struct {
+	Name string `xml:"name,attr"`
+	// 	Urn         string     `xml:"urn,attr"`
+	// 	Description string     `xml:"description"`
+	// 	Packages    Packages   `xml:"packages"`
+	// 	Packages3d  Packages3d `xml:"packages3d"`
+	// 	Symbols     Symbols    `xml:"symbols"`
+	Devicesets Devicesets `xml:"devicesets"`
+}
 
 // // Packages is generated from an XSD element
 // type Packages struct {
@@ -189,22 +189,22 @@ type Text struct {
 // 	Pin       string  `xml:",chardata"`
 // }
 
-// // Devicesets is generated from an XSD element
-// type Devicesets struct {
-// 	Deviceset Deviceset `xml:"deviceset"`
-// }
+// Devicesets is generated from an XSD element
+type Devicesets struct {
+	Deviceset []Deviceset `xml:"deviceset"`
+}
 
-// // Deviceset is generated from an XSD element
-// type Deviceset struct {
-// 	Name            string  `xml:"name,attr"`
-// 	Urn             string  `xml:"urn,attr"`
-// 	Prefix          string  `xml:"prefix,attr"`
-// 	Uservalue       string  `xml:"uservalue,attr"`
-// 	Library_version byte    `xml:"library_version,attr"`
-// 	Description     string  `xml:"description"`
-// 	Gates           Gates   `xml:"gates"`
-// 	Devices         Devices `xml:"devices"`
-// }
+// Deviceset is generated from an XSD element
+type Deviceset struct {
+	Name string `xml:"name,attr"`
+	// Urn             string  `xml:"urn,attr"`
+	// Prefix          string  `xml:"prefix,attr"`
+	// Uservalue       string  `xml:"uservalue,attr"`
+	// Library_version byte    `xml:"library_version,attr"`
+	// Description     string  `xml:"description"`
+	// Gates           Gates   `xml:"gates"`
+	Devices Devices `xml:"devices"`
+}
 
 // // Gates is generated from an XSD element
 // type Gates struct {
@@ -220,19 +220,19 @@ type Text struct {
 // 	Gate   string `xml:",chardata"`
 // }
 
-// // Devices is generated from an XSD element
-// type Devices struct {
-// 	Device Device `xml:"device"`
-// }
+// Devices is generated from an XSD element
+type Devices struct {
+	Device []Device `xml:"device"`
+}
 
-// // Device is generated from an XSD element
-// type Device struct {
-// 	Name               string             `xml:"name,attr"`
-// 	Package            string             `xml:"package,attr"`
-// 	Connects           Connects           `xml:"connects"`
-// 	Package3dinstances Package3dinstances `xml:"package3dinstances"`
-// 	Technologies       Technologies       `xml:"technologies"`
-// }
+// Device is generated from an XSD element
+type Device struct {
+	Name string `xml:"name,attr"`
+	// Package            string             `xml:"package,attr"`
+	// Connects           Connects           `xml:"connects"`
+	// Package3dinstances Package3dinstances `xml:"package3dinstances"`
+	Technologies Technologies `xml:"technologies"`
+}
 
 // // Connects is generated from an XSD element
 // type Connects struct {
@@ -258,24 +258,24 @@ type Text struct {
 // 	Package3dinstance string `xml:",chardata"`
 // }
 
-// // Technologies is generated from an XSD element
-// type Technologies struct {
-// 	Technology Technology `xml:"technology"`
-// }
+// Technologies is generated from an XSD element
+type Technologies struct {
+	Technology Technology `xml:"technology"`
+}
 
-// // Technology is generated from an XSD element
-// type Technology struct {
-// 	Name      string      `xml:"name,attr"`
-// 	Attribute []Attribute `xml:"attribute"`
-// }
+// Technology is generated from an XSD element
+type Technology struct {
+	Name      string      `xml:"name,attr"`
+	Attribute []Attribute `xml:"attribute"`
+}
 
-// // Attribute is generated from an XSD element
-// type Attribute struct {
-// 	Name      string `xml:"name,attr"`
-// 	Value     string `xml:"value,attr"`
-// 	Constant  string `xml:"constant,attr"`
-// 	Attribute string `xml:",chardata"`
-// }
+// Attribute is generated from an XSD element
+type Attribute struct {
+	Name  string `xml:"name,attr"`
+	Value string `xml:"value,attr"`
+	// Constant  string `xml:"constant,attr"`
+	// Attribute string `xml:",chardata"`
+}
 
 // // Classes is generated from an XSD element
 // type Classes struct {
